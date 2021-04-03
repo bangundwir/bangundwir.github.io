@@ -3,7 +3,6 @@
 Setting Mikrotik Hotspot Voucer
 ===============================
 
-<https://hadescenter.my.id/wiki/index.php/Setting_Mikrotik_Hotspot_Voucer#https://hadescenter.my.id/wiki/index.php/Setting_Mikrotik_Hotspot_Voucer#searchInput>
 
 **Atur DHCP**
 
