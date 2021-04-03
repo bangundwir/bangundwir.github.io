@@ -39,7 +39,7 @@ dwm()
 	{
 		cd ~
 		rm -r dwm
-		git clone git@gitlab.com:hexdsl/dwm.git
+		git clone git@gitlab.com:BangunCenter/dwm.git
 		cd dwm
 		git pull --all
 		for branch in $(git branch --all | grep '^\s*remotes' | egrep --invert-match '(:?HEAD|master)$'); do
@@ -63,15 +63,15 @@ webs()
 		cd ~
 		mkdir websites
 		cd websites
-		git clone git@gitlab.com:hexdsl/pixelfridge.git
-		git clone git@gitlab.com:hexdsl/hexdsl-website.git
+		git clone git@gitlab.com:BangunCenter/pixelfridge.git
+		git clone git@gitlab.com:BangunCenter/BangunCenter-website.git
 		cd ..
 	}
 
 dots()
 	{
 		cd ~
-		git clone git@gitlab.com:hexdsl/dots.git
+		git clone git@gitlab.com:BangunCenter/dots.git
 	}
 
 stow()

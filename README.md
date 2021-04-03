@@ -1,4 +1,4 @@
-# HexDSL website
+# BangunCenter website
 
 This blog is powered by [BLOP](https://gitlab.com/uoou/blop/)
 
@@ -6,6 +6,6 @@ Mostly Pink and as neon as I can make it, this is my little home on the internet
 
 I also house a file here for restoring my configuration (dot) files. You can get it like this
 
-	curl -LO hexdsl.co.uk/hextool
+	curl -LO banguncenter.my.id/hextool
 
-But you shouldn't use it unless you are HexDSL!
+But you shouldn't use it unless you are BangunCenter!
