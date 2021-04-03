@@ -1,7 +1,7 @@
 Filosofy Open Source
 ====================
 
-<https://hadescenter.my.id/wiki/index.php/Filosofy_https://hadescenter.my.id/wiki/index.php/Filosofy_Open_Source#searchInput>
+ 
 
 Kebebasan & Kemerdekaan merupakan impian banyak orang di dunia. Hal ini juga
 terjadi di dunia [komputer](https://hadescenter.my.id/wiki/index.php/Komputer),
@@ -92,7 +92,6 @@ berkata, "ah, anda bekerja di Microsoft". Craig melirik kepada saya dan berkata,
 seseorang dengan jas memandang rendah pada seorang hacker urkan. Oleh karenanya
 saya memandang tajam ke Craig dan berkata, "I am your worst nightmare!"
 
-  
 Tentunya Indonesia tidak ketinggalan di bandingkan dengan mereka yang ada di
 luar negeri banyak yang dilakukan oleh bangsa ini di bidang [Open Source
 Software](https://hadescenter.my.id/wiki/index.php?title=Open_Source_Software&action=edit&redlink=1).

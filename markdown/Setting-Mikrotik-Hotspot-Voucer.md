@@ -3,10 +3,7 @@
 Setting Mikrotik Hotspot Voucer
 ===============================
 
-[Jump to
-navigation](https://hadescenter.my.id/wiki/index.php/Setting_Mikrotik_Hotspot_Voucer#mw-head)[Jump
-to
-search](https://hadescenter.my.id/wiki/index.php/Setting_Mikrotik_Hotspot_Voucer#searchInput)
+<https://hadescenter.my.id/wiki/index.php/Setting_Mikrotik_Hotspot_Voucer#https://hadescenter.my.id/wiki/index.php/Setting_Mikrotik_Hotspot_Voucer#searchInput>
 
 **Atur DHCP**
 
@@ -33,7 +30,6 @@ IP --> Firewall --> NAT --> + --> Chain: srcnat | out. interface: ether 1 ISP --
 Terminal --> ping google.com OK
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  
 **Mnentukan alamat IP client**
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
