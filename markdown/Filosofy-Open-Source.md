@@ -1,10 +1,7 @@
 Filosofy Open Source
 ====================
 
-[Jump to
-navigation](https://hadescenter.my.id/wiki/index.php/Filosofy_Open_Source#mw-head)[Jump
-to
-search](https://hadescenter.my.id/wiki/index.php/Filosofy_Open_Source#searchInput)
+<https://hadescenter.my.id/wiki/index.php/Filosofy_https://hadescenter.my.id/wiki/index.php/Filosofy_Open_Source#searchInput>
 
 Kebebasan & Kemerdekaan merupakan impian banyak orang di dunia. Hal ini juga
 terjadi di dunia [komputer](https://hadescenter.my.id/wiki/index.php/Komputer),
