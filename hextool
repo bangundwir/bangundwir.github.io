@@ -1,0 +1,158 @@
+#!/bin/bash
+#script to restore my configuration files (dots) from gitlab and install my software selections.
+
+me="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
+u="$USER"
+
+menu()
+	{
+		echo "usage:   " $me "[OPTION]"
+		echo " "
+		echo "init:    Install the basics (git/yay)"
+		echo "dots:    Get Dots from gitlab (into '~/dots' folder)"
+		echo "stow:    Restore Stow form dots"
+		echo "apps:    Use 'yay' to install all Hex's applications"
+		echo "syms:    THIS WILL DELETE FOLDERS YOU ARE USING! (uses Dropbox!)"
+		echo "dwm:     Pulls down Hex's DWM repo (uses branches)"
+		echo "webs:    Pulls down Hex's websites from git (You don't need this)"
+		echo "wire:    Install Hex's Wireguard settings, only run if you is Hex"
+		echo "hug:     We all need one sometimes"
+		echo " "
+		echo "...or just use option 'all' to just do it all in one go (DO NOT USE!) "
+		echo " "
+		echo "INFORMATION! - options are shown in 'best' order for new install."
+	}
+
+init()
+	{
+		cd /tmp/
+		curl -LO https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz
+		tar xvzf yay.tar.gz
+		cd yay
+		makepkg -sci
+		sudo pacman -S --needed git
+		yay -S dropbox
+		echo "now setup Dropbox, then run syms"
+	}
+
+dwm()
+	{
+		cd ~
+		rm -r dwm
+		git clone git@gitlab.com:hexdsl/dwm.git
+		cd dwm
+		git pull --all
+		for branch in $(git branch --all | grep '^\s*remotes' | egrep --invert-match '(:?HEAD|master)$'); do
+    		git branch --track "${branch##*/}" "$branch"
+		done
+	}
+
+hug()
+	{
+	clear
+	echo " "
+	title="((((((((( hug )))))))))"
+	printf "%*s\n" $(((${#title}+$COLUMNS)/2)) "$title"
+	echo " "
+	echo "everything is going to be okay buddy!"
+	echo " "
+	}
+
+webs()
+	{
+		cd ~
+		mkdir websites
+		cd websites
+		git clone git@gitlab.com:hexdsl/pixelfridge.git
+		git clone git@gitlab.com:hexdsl/hexdsl-website.git
+		cd ..
+	}
+
+dots()
+	{
+		cd ~
+		git clone git@gitlab.com:hexdsl/dots.git
+	}
+
+stow()
+	{
+	#Remove old MimeTypes list (Because X11 puts it back all the time!)
+	rm ~/.config/mimeapps.list
+
+	#setup ~ stow files
+	rm ~/.config/mimeapps.list &
+	cd ~/dots/stow_home
+	for d in *; do stow -t ~ $d ;done
+
+
+	#Setup ROOT stow files
+	#cd ~/dots/stow_root; for d in *; do sudo stow -t / $d; done
+	}
+
+apps()
+	{
+		test -f ~/.restore/applist && yay -S --needed - < ~/.restore/applist || echo "Do dots & stow first dude!"
+	}
+
+pass()
+	{
+		pass init $u
+	}
+
+syms()
+	{
+		read -p "Are you sure? THIS WILL DELETE MANY THINGS and symlink them to Dropbox folders [Y/N]" -n 1 -r
+		echo
+		if [[ ! $REPLY =~ ^[Yy]$ ]]
+		then
+		    exit 1
+		fi
+
+		#PICTURE FOLDER!
+		rm -R ~/Pictures
+
+		ln -s ~/Dropbox/Photos/ ~/Pictures
+
+		#DOCUMENT FOLDER!
+		rm -R ~/Documents
+
+		ln -s ~/Dropbox/Documents/ ~/Documents
+
+		#ABOOK FOLDER!
+		#not actually synced for security reasons!
+		rm -R ~/.abook
+
+		ln -s ~/Dropbox/.abook/ ~/.abook
+
+		#SSH FOLDER!
+		#not actually synced for security reasons!
+		rm -R ~/.ssh
+		ln -s ~/Dropbox/.ssh/ ~/.ssh
+		chmod 600 ~/.ssh/id_rsa
+
+		#CALCURSE FOLDER!
+		#not actually synced for security reasons!
+		rm -R ~/.calcurse
+		ln -s ~/Dropbox/.calcurse/ ~/.calcurse
+
+		#PASS-STORE FOLDER!
+		#ENCRYPTED!
+		rm -R ~/.password-store
+		ln -s ~/Dropbox/.password-store/ ~/.password-store
+		echo "--------------------------------------"
+		echo "You may want to run 'pass init $u' now"
+	}
+
+wire()
+	{
+		#Wireguard FOLDER!
+		#not actually synced for security reasons!
+		sudo rm -r /etc/wireguard
+		sudo cp ~/Dropbox/.wireguard/ /etc/wireguard
+	}
+
+if [ -n "$1" ]; then
+  $1
+else
+  menu
+fi

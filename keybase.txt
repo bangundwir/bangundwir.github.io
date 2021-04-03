@@ -1,0 +1,89 @@
+==================================================================
+https://keybase.io/hexdsl
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://hexdsl.co.uk
+  * I am hexdsl (https://keybase.io/hexdsl) on keybase.
+  * I have a public key with fingerprint 4359 7FC7 B910 6A85 AE3B  2D12 5DB9 9853 B080 D0D4
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120247a60713a8c4519aa0b5c210f3506ab0bf6cd1904205451ef933d239b6586b80a",
+      "fingerprint": "43597fc7b9106a85ae3b2d125db99853b080d0d4",
+      "host": "keybase.io",
+      "key_id": "5db99853b080d0d4",
+      "kid": "01013316d9f4ce2ba773bc7a6a338bd2259da53bc267cffc2d3c68546bc9d286a1630a",
+      "uid": "04fb6078d20bb9c3b4c8889472605419",
+      "username": "hexdsl"
+    },
+    "merkle_root": {
+      "ctime": 1566758220,
+      "hash_meta": "87932627003d4cc40269595b1c52485de773bb78484a623cf25c988425c5e898",
+      "seqno": 6096322
+    },
+    "revoke": {
+      "sig_ids": [
+        "def6e40f937cf57ea8c83765dbbc3d000734c5c6e589365d5d2dc5d59d271ef40f"
+      ]
+    },
+    "service": {
+      "hostname": "hexdsl.co.uk",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1566758172,
+  "expire_in": 157680000,
+  "prev": "85e4188ce96e9695afe3bc85bf15de7ee4f3b8388bf16a35daa66a095bc496f8",
+  "seqno": 25,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.3
+Comment: https://keybase.io/crypto
+
+yMP5AnicbZN/bBRFFMevFPlxRagkECkYLxugAQvMzu7MzlZAqUgVElEqFZDjsjM7
+267X3h631ysEqrSRH5UaqCm/okV+tzZQagopUAOhFELBP/jRCoVEQQQqRiEIqFii
+s1USSUw2mezM9733fZ830/p0ss+fFDy4Madh2Zn2pNMtbpEvSDtGLJGoYy6WMpdI
+Yd6z8AKTu/FQ2DalTAnIEEBVMzDQZMUgTEWybhiAIgZlYCkIYIMCamFmyjpQIUBC
+wC1dUUyo6BQjgikBhpQhWXYkj8eiMTsSF2lVBemaxTSqyyIDQQZXKDRliEyq6wQp
+FBBgAlMVgfmO60UIc9Rw+XjbEXviJ9Rj73/0j30DWVFkbOqWyjikhqYplIk+DEUh
+1IQQ6aYh4hjEGrMsBk2FYYJUTJluQoINGSs9vov+SadaVCAgJgSU6kyhKiOE6KoG
+sWhZ1j2hy2MRo5ALdT5fZLoFUkmGVMhj4QIeijlO3EPL4rYnkBHGGiIQAtGe4eaH
+CnncEHFE0xWIoQaAYqqMqQBiHemIygxBlSCTe01QjahENTBUmAUR0wlRxYI40Ylw
+4fKFEUfKxEDHCoTCQYwnnDD3irt2noDmSpnvSia3MFeBmJNoHmlcDJYoGhY0KVNM
+AICmqAwxzBHRFbGNTGgysQg0mhiviJSCJV6xWMJmPcm9KT3R/XjmjC8KC0fRmBN3
+mFPgncTj0UwPS3xx1FMWcxr6N0eI2hFTXBERkOAx13YiApNQPklM1mCGxBdF7RgP
+2Z4CaZgIu8ArwxMeQsRVmRDGdSw+HRmWuFmMIGrJHj/OVUuhRCFEbIi7gEzDwNgA
+AjJTdWz9ByFEwqeRJ3IKcBEjXhTjUknL0fm9fUl+X5+nenlvx+fvn/r4RW0pH/Qw
+ufmvU7XTxx7MvbOpY9aLFZ1z02GKPhPu3tXdkH7owt2v7s/gJx7uH33xs4FXe4/K
+dVedV+d/p8fKFlzeMCQ6UX72WtYHUu6V+pWt8UC/B+l1dcOKZ4+umvJp8/bqH+u6
+3KFvb8/IaLl6awUOvHahZUrtr9nB5ZONce85fb+PH77ZfXR3Ai5IDWRdYGueT2uu
+pmWvTLvywpikzyt+X794TPftX5afrMENUZDTemDfkjUN98PXs3/YM6S08fjxUxXJ
+/Y6Mq8o7eyPYmjX80dqPbnHJafSd7/AvK8+6V3az8sjs7st775atS9/eZ5ZMhvnb
+8wbHhzdNzan/pqRjzpedfTkNPJOS4Oequy/dWLF1Qsvh5gfP3UoZlVO7zXm4eXPU
+KXWndq2/XVMzKaO/HCwesPbuy1WXckZu3DSvomleamn7nuwJgaVpU1YPGPjzH9f7
+W+uHBnaMfnRi8JBzPx2qKa/8sOHjujETr23Kb4tcXPf6naa0qtNt5YfSq+Z/W792
+h39c69zDG3DdZDW6a29q16uj7i1MOdDWy6797Y2ZuX1O0k7fkbS26yNqd2Xv/eKT
+q8X7leRF/uCWqW8FZv25ujH9Zte+jvcnlUzcWTn4weXpOV9vjUkH/eX1pWuKCncc
+O2Y7ne0Blohe29lry9LVZxZU+sJy5ktDk0amnXynse/FVXPG5g06Wrby7LTqkLn/
+zW2qUTGj6W/KU/5f
+=q9us
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/hexdsl
+
+==================================================================
+

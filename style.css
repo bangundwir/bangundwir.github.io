@@ -1,141 +1,388 @@
-p img, li img, h1 img, h2 img, h3 img, h4 img {
-	max-height: 1em;
-	max-width: 1em;
-}
-body {
-	margin: auto ;
-	color: #ddd ;
-	background: rgba(0,0,0,.3) ;
-	padding: 20px ;
-	border-radius: 50px ;
+
+@font-face {
+	font-family: Streamster;
+	src: url(fonts/Streamster.ttf);
 }
 
-strong { color: white ; }
-
-a strong { color: lime ; }
-details { padding-left: 20px ; text-decoration: underline; }
-
-pre {
-	background: #222 ;
-	border: 1px solid lime ;
-	border-radius: 20px ;
-	padding: 20px ;
-	margin: 30px ;
+@font-face {
+	font-family: Digi;
+	src: url(fonts/DS-DIGI.TTF);
 }
 
-code {
-	background: #222 ;
-	color: lime ;
-	border-radius: 5px ;
+@font-face {
+	font-family: Digibold;
+	src: url(fonts/DS-DIGIB.TTF);
 }
 
-ul {
-	margin-left: 20px ;
-	margin-right: 20px ;
+@font-face {
+	font-family: Dyslexic;
+	src: url(fonts/Dyslexic.ttf);
 }
 
-li img, p img {
-	max-height: 1em ;
-	max-width: 1em ;
+:root {
+	font-size: 1.0em;
+	--textcol: #ffffff;
+	--bg: #2c2c2c;
+	--altbg:#ffffff;
+	--link: #c0e5fa;
+	--linkalt: #ffffff;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	/*box-shadow: 0 0 5px #00f0ff, 0 0 3px #00f0ff, 0 0 3px #00f0ff, 0 0 3px #00f0ff, 0 0 5px #00f0ff, 0 0 3px #00f0ff inset, 0 0 5px #00f0ff inset, 0 0 5px #00f0ff inset, 0 0 5px #00f0ff inset, 0 0 15px #00f0ff inset;*/
+	/*font-family: Dyslexic;*/
+}
+
+#background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+}
+
+.stretch {
+    width:100%;
+    height:100%;
+}
+
+li img{
+	height: 1.25em;
+}
+
+h1 img{
+	height: 2em;
+
+}
+
+h2 img{
+	height: 1em;
+}
+
+h3 img{
+	height: 1em;
 }
 
 html {
-	padding-top: 10px;
-	background: linear-gradient(darkslategray, black) no-repeat fixed ;
-	margin-bottom: 500px;
-
+	line-height: 1.5;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	color: var(--textcol);
+	font-family: sans-serif;
+	background: var(--bg);
 }
 
-h1,h2,h3,h4 { text-align: center ; }
-
-h1 { color: lightblue ; }
-
-h2 { color: goldenrod ; }
-
-h3 { color: tomato ; }
-
-h4 { color: deepskyblue ; }
-
-a { color: turquoise ;}
-
-a:hover { color: greenyellow ;}
-.new a:hover { color: greenyellow ; }
-
-
-dt { font-weight: bold ; color: lightgray ; }
-
-.resright {
-	display: block ;
-	margin: auto ;
-	max-width: 90% ;
+a {
+	color: var(--link);
+	text-decoration: none;
 }
 
-.titleimg {
-	display: block ;
-	margin: auto ;
-	max-width: 90% ;
-	max-height: 400px ;
+a:hover {
+	transition: text-shadow 0.5s, color 0.5s;
+    color: var(--linkalt);
+	text-shadow: 0 0 2px #dbdbdd, 0 0 3px #dbdbdd, 0 0 5px #dbdbdd, 0 0 9px #dbdbdd, 0 0 9px #dbdbdd;
 }
 
-.lol {
-	padding: .25em ;
+
+h1:hover {
+	/*transition: text-shadow 3.0s, color 0.5s;*/
+	text-shadow: none;
 }
 
-.lol ul {
-	margin: 0;
-	list-style: none;
-	padding: 0;
+h2:hover {
+	/*transition: text-shadow 3.0s, color 0.5s;*/
+	/*text-shadow: 0 0 2px #dbdbdd, 0 0 3px #dbdbdd, 0 0 5px #dbdbdd, 0 0 9px #dbdbdd, 0 0 9px #dbdbdd;*/
 }
 
-/* .lol li { */
-/* 	padding: 1px ; */
-/* } */
-
-@media (min-width: 55em) {
-	.lol { display: inline-block; vertical-align: top ; }
-
-	.resright {
-		float: right;
-		padding: 20px ;
-		clear: both ;
-		max-width: 300px ;
-	}
-
-	body { max-width: 850px ; }
+body {
+	margin-top: 10px;
 }
 
-footer {
-	font-size: large ;
-	margin: auto ;
-	max-width: 500px ;
+/* The two panels on the main page: */
+.mainpanel {
+	margin: 0 auto;
+	max-width: 1000px;
+	padding: 10px;
 }
 
-.entry p, .entry li { margin-left: 2em ; }
+.mainpanel img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1000px;
+	padding: 10px;
+}
 
-figure img { max-width: 100% ; margin: auto ; }
+.xpeng {
+	margin: 0 auto 0 auto;
+	display: block;
+	text-align: center;
+	max-width: 1000px;
+	padding: 5px;
+}
 
-figcaption { font-style: italic ; font-size: small ; }
+.xpeng img {
+	display: inline-block;
+	text-align: center;
+	max-width: 230px;
+	min-width: 230px;
+	border: 3px solid #adc001;
+}
 
-figure { text-align: center; }
 
-#toc {
-	font-size: x-large ;
+.xpeng img:hover {
+	transition: text-shadow 0.5s, color 0.5s;
+    color: var(--linkalt);
+	border: 3px solid #75db16;
+}
+
+.mainpanel li {
+    line-height:17px;
+    margin-bottom: 8px;
+}
+
+.bumpanel {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	left: 50%;
+	top: 1px;
+	transform: translateX(-50%);
+	background-color: var(--altbg);
+	padding: 15px;
+	height: auto;
 	margin-left: auto ;
 	margin-right: auto ;
-	max-width: 500px ;
-
+	text-align: center;
+	max-width: 1000px;
+	min-width: 1000px;
+	box-shadow: 0 0 2px #00f0ff, 0 0 3px #00f0ff, 0 0 3px #00f0ff, 0 0 9px #00f0ff, 0 0 9px #00f0ff, 0 0 2px #00f0ff inset, 0 0 4px #00f0ff inset, 0 0 3px #00f0ff inset, 0 0 2px #00f0ff inset, 0 0 1px #00f0ff inset;
 }
 
-#toc li { padding: 5px }
-
-.new::after {
-	content: " 🆕" ;
-	/* content: " (New 🎁)" ; */
-	color: goldenrod ;
+.bumpanel a {
+    display: inline-flex;
 }
 
-.i a { color: green ;}
-.d a { color: red ;}
+.bumpanel a img {
+    margin-right: 5px;
+}
 
-/* For QR codes for bitcoin and crypto */
-.qr { max-width: 150px ; padding: 10px }
+
+.asspanel {
+	display: block;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	left: 50%;
+	bottom: 23px;
+	transform: translateX(-50%);
+	padding: 9px;
+	height: auto;
+	margin-left: auto ;
+	margin-right: auto ;
+	text-align: center;
+	max-width: 1000px;
+	min-width: 1000px;
+}
+
+.asspanel a {
+    display: inline-flex;
+}
+
+.asspanel a img {
+    margin-right: 5px;
+}
+
+.sidepanel a {
+	color: #7198ec;
+}
+
+.sidepanel a:hover {
+	/*color: #144DF1;*/
+	transition: text-shadow 0.5s, color 0.5s;
+	text-shadow: 0 0 2px #5399e9, 0 0 3px #5399e9, 0 0 5px #5399e9, 0 0 9px #5399e9, 0 0 9px #5399e9;
+}
+
+.sidepanel ul li {
+	font-size:20px;
+	margin:0 0 0 0;
+}
+
+.sidepanel ul li ul li {
+	font-size:18px;
+	margin: 0px;
+	list-style: none;
+}
+
+a:hover img {
+    background: #042d5c;
+}
+
+header #byline {
+	font-size: 0.8em;
+	margin-top: -1.6em;
+	margin-bottom: 3em;
+}
+
+/* Blog entry: */
+.entry {
+	padding: 30px;
+	border-radius: 0 1px 1px 0;
+	margin-bottom: 20px;
+	background: #2a2a35;
+	border-left: 10px solid #5982c1;
+}
+
+.entry h2 {
+	margin: 5px auto 2px auto;
+}
+
+footer strong {
+	font-weight: bold;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dt img {
+	height: 1em;
+}
+
+/* Class name of video thumbnails in videos.html */
+.image {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+img.centered {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+img {
+    /* border-radius: 4px; */
+}
+
+
+code {
+	color: #03f117;
+	font-family: monospace;
+	overflow-x: auto;
+	background-color: rgb(0, 0, 0);
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border: 2px solid salmon;
+    border-radius: 8px;
+    padding: 5px;
+    display: block;
+}
+
+pre {
+    background: var(--color11);
+    border: 1px solid var(--color10);
+    border-radius: 4px;
+    padding: 5px;
+    display: block;
+    /* background: #1d2021; */
+}
+
+.indexcolname {
+	max-width: 100px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.indexcoldesc {
+	font-weight: bold;
+	padding: 10px;
+	font-size: large;
+}
+
+.indexcollastmod,.indexcolsize {
+	font-size: small;
+}
+
+#indexlist {
+	margin: 0px auto;
+}
+
+.centerpiece {
+	align: center;
+	margin: 0px auto;
+}
+
+h1 {
+	padding: 10px;
+	transition-duration: 0.9s;
+	color: #6a64a5;
+	font-weight:bold;
+	margin: 0 auto 0 auto;
+	text-align: center;
+	/*text-shadow: 0 0 10px #00f0ff, 0 0 10px #00f0ff, 0 0 15px #00f0ff, 0 0 15px #00f0ff, 0 0 10px #00f0ff;*/
+}
+
+h2 {
+	/*font-family: Digibold;*/
+	color: #f2f0f7;
+	font-weight:bold;
+}
+
+.imgcont {
+	text-align: center;
+	position: relative;
+}
+
+.imgconttext {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: xx-large;
+	color: black;
+	text-shadow:
+	-1px -1px 0 white,
+	1px -1px 0 white,
+	-1px 1px 0 white,
+	1px 1px 0 white;
+}
+
+.hiddiv {
+	display: none;
+}
+
+.qr:hover .hiddiv {
+	display: block;
+	float: right;
+}
+
+.hiddiv img {
+	height: 200px;
+}
+
+.ytvid {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 56.25%;
+}
+
+.video {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
