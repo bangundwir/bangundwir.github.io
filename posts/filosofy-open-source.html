@@ -1,18 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/css" href="rss.css" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<!DOCTYPE html>
+<html lang="en">
 
-<channel>
-<title>PodSni dot co dot uk</title>
-<description>PodSNI's HOME PAGE</description>
-<language>en-gb</language>
-<link>https://podsni.github.io//rss.xml</link>
-<atom:link href="https://podsni.github.io//rss.xml" rel="self" type="application/rss+xml" />
 
-<item>
-<title>Filosofy Open Source</title>
-<guid>https://podsni.github.io//posts/filosofy-open-source.html</guid>
-<pubDate>Sun, 04 Apr 2021 01:35:05 +0700</pubDate><description><![CDATA[<h1 id="filosofy-open-source">Filosofy Open Source</h1>
+
+<head>
+
+<!--<div class="bumpanel">
+	<a target="_blank" href="https://youtube.com/c/BangunCenter"><img src="../images/youtube.png" height=21 alt="YouTube"> YouTube</a>
+	<a href="http://xpenguin.club"><img src="../images/xpenguin.png" height=21 alt="Xpenguin"> .XPenguin</a>
+	<a href="https://gitlab.com/BangunCenter"><img src="../images/gitlab.png" height=21 alt="Gitlab"> Gitlab</a>
+	<a href="http://pixelfridge.club"><img src="../images/fridge.png" height=21 alt="PixelFridge"> PixelFridge</a>
+	<a href="../email.html"><img src="../images/email.png" height=21 width=30 alt="Email me"> Email</a>
+	<a href="../archive.html"><img src="../images/blog.png" height=21 alt="Blog"> Posts</a>
+	<a href="../rss.xml"><img src="../images/rss.png" height=21 alt="RSS feed"> RSS feed</a>
+	<a href="https://discord.gg/uRksPhD"><img src="../images/discord.png" height=21 alt="discord"> Discord</a>
+	<a href="https://patreon.com/BangunCenter"><img src="../images/patreon.png" height=21 alt="Patreon"> Patreon</a>
+</div>-->
+	<title>PodsSni - Filosofy Open Source</title>
+	<meta charset="utf-8">
+	<link rel="alternate" type="application/atom+xml" title="RSS Feed" href="../rss.xml">
+	<link rel="stylesheet" href="../style.css" >
+	<link rel="shortcut icon" href="../images/favicon.png">
+</head>
+
+<body>
+
+<div class="mainpanel">
+
+<header>
+	<h1><a href="../">BangunCenter</a></h1>
+	<h2>Filosofy Open Source</h2>
+	<div id="byline">by BangunCenter on 4 Apr '21</div>
+</header>
+
+<article>
+<h1 id="filosofy-open-source">Filosofy Open Source</h1>
 <p><a href="https://hadescenter.my.id/wiki/index.php/Filosofy_Open_Source#mw-head">Jump to navigation</a><a href="https://hadescenter.my.id/wiki/index.php/Filosofy_Open_Source#searchInput">Jump to search</a></p>
 <p>Kebebasan &amp; Kemerdekaan merupakan impian banyak orang di dunia. Hal ini juga terjadi di dunia <a href="https://hadescenter.my.id/wiki/index.php/Komputer">komputer</a>, di tahun 1960-an pada masa awal berkembangkan <a href="https://hadescenter.my.id/wiki/index.php/Komputer">komputer</a> menggunakan <a href="https://hadescenter.my.id/wiki/index.php?title=Mini_komputer&amp;action=edit&amp;redlink=1">mini komputer</a> seperti PDP-11, para pemrogram masih relatif mudah melihat <a href="https://hadescenter.my.id/wiki/index.php/Source_code">source code</a> dari <a href="https://hadescenter.my.id/wiki/index.php?title=Software&amp;action=edit&amp;redlink=1">software</a> yang digunakan.</p>
 <p>Sayangnya dunia kapitalis yang sangat komersial cenderung untuk memproteksi <a href="https://hadescenter.my.id/wiki/index.php/Source_code">source code</a> dan memaksimalkan keuntungan dari penggunaan <a href="https://hadescenter.my.id/wiki/index.php?title=Software&amp;action=edit&amp;redlink=1">software</a> yang di kembangkan. Contoh yang paling extrim yang kita lihat hari ini adalah Microsoft. Dan kenyataan yang sangat menyakitkan adalah bangsa Indonesia harus membayar US$300 juta per tahun ke Microsoft untuk membayar lisensinya.</p>
@@ -44,81 +66,12 @@
 <h2 id="pranala-menarik">Pranala Menarik</h2>
 <ul>
 <li><a href="http://surabaya.linux.or.id/archives/2007/08/08/open-source.html" class="uri">http://surabaya.linux.or.id/archives/2007/08/08/open-source.html</a></li>
-</ul>]]></description>
-</item>
+</ul>
+</article>
 
+</div>
 
-<item>
-<title>Setting Mikrotik Hotspot Voucer</title>
-<guid>https://podsni.github.io//posts/setting-mikrotik-hotspot-voucer.html</guid>
-<pubDate>Sun, 04 Apr 2021 00:45:10 +0700</pubDate><description><![CDATA[<p> </p>
-<h1 id="setting-mikrotik-hotspot-voucer">Setting Mikrotik Hotspot Voucer</h1>
-<p><a href="https://hadescenter.my.id/wiki/index.php/Setting_Mikrotik_Hotspot_Voucer#mw-head">Jump to navigation</a><a href="https://hadescenter.my.id/wiki/index.php/Setting_Mikrotik_Hotspot_Voucer#searchInput">Jump to search</a></p>
-<p><strong>Atur DHCP</strong></p>
-<pre><code>IP --&gt; DHCP Client --&gt; Interface : Intirface 1  isp --&gt; Add Default Route:Yes  --&gt; status bound OK
-Cek IP --&gt; Addresses</code></pre>
-<p><strong>Atur DNS di Mikrotik</strong></p>
-<pre><code>Maskuk IP --&gt; DNS Setting --&gt; servers 8.8.8.8 | 8.8.4.4 | 1.1.1.1 | 1.0.0.1 --&gt; Centang Allow remote requests OK</code></pre>
-<p><strong>Atur Firewall</strong></p>
-<pre><code>IP --&gt; Firewall --&gt; NAT --&gt; + --&gt; Chain: srcnat | out. interface: ether 1 ISP --&gt; Action: masquarade  OK</code></pre>
-<p><strong>Test jaringa</strong></p>
-<pre><code>Terminal --&gt; ping google.com OK</code></pre>
-<p><strong>Mnentukan alamat IP client</strong></p>
-<pre><code>IP --&gt; Addresses --&gt; + --&gt; Interface ether2_PC --&gt; address: 192.168.22.1/24 --&gt; Network 192.168.22.0 OK
-IP --&gt; Addresses --&gt; + --&gt; Interface ether3_Hotspot --&gt; address: 192.168.22.1/24 --&gt; Network 10.20.30.1/24 OK</code></pre>
-<p><strong>Konfigurasi DHCP Server</strong></p>
-<pre><code>IP --&gt; DHCP Server --&gt; DHCP --&gt; klik --&gt; DHCP Setup --&gt; DHCP server interface: Ether2_PC --&gt; Next --&gt; Next --&gt; Next --&gt; seting waktu 12jam OK
-REBOOT</code></pre>
-<p><strong>Setting Tanggal dan jam Mikrotik</strong></p>
-<pre><code>System --&gt; SMTP Client --&gt; enable --&gt;Server DNS Names: id.pool.ntp.org OK
-System --&gt; Clock --&gt; Asia Jakarta</code></pre>
-<p><strong>Konfigurasi Hotspot</strong></p>
-<pre><code>IP --&gt; Hotspot --&gt; Servers --&gt; Hotspot Setup --&gt; Hotspot Interface: Ether 3 Hotspot --&gt; Andrres pool of Network --&gt;sesuaikan --&gt; next --&gt; next --&gt; DNS 
-NAME:terserah atau Hadescenter12.com --&gt; Create LocalHotpot : potok | potok OK 
-IP --&gt; Hotspot --&gt; klik hotspot1 --&gt; Addresses per MAC : 1/satu kode voucer hanya bisa login 1 kali OK
-IP --&gt; Hotspot --&gt; Server Profiles --&gt; klik hotspot1 --&gt; Login --&gt; centang HTTP CHAP | HTTP PAP | MAC Cookie OK
-IP --&gt; Hotspot --&gt; Server Profiles --&gt; klik default --&gt; general --&gt; DNS hadescenter123.com --&gt; hotpsot addres 10.20.30.1 --&gt;Login --&gt; centang HTTP CHAP | HTTP PAP 
-| MAC Cookie OK
-IP --&gt; Hotspot --&gt; User Profile --&gt; Shared User: 1 voucer 1 user --&gt; Rate Limit : Membatasi kecepatan: 1M/2M OK
-IP --&gt; Hotspot --&gt; User --&gt; 
-IP --&gt; Hotspot --&gt; Host cek
-IP --&gt; Hotspot --&gt; Sctive user yang aktif
-IP --&gt; Hotspot --&gt; Host cek --&gt; mendapatak A- aurhorized
-Queues --&gt; Muncul Kecepatan </code></pre>
-<p><strong>Catatan</strong></p>
-<pre><code>IP access pont:10.20.30.2 samapai 10.20.30.11
-IP Pengguna voucer 10.20.30.11 sampai 10.20.30.254
-Settinng Centang hide pass</code></pre>]]></description>
-</item>
+<center><small>Saya Akan Menulis yang ingin saya tulis</small></center>
 
-
-<item>
-<title>Tentang Vim</title>
-<guid>https://podsni.github.io//posts/tentang-vim.html</guid>
-<pubDate>Fri, 19 Mar 2021 14:31:14 +0700</pubDate><description><![CDATA[<h1 id="vim">VIM</h1>
-<p>Text editor, merupakan senajata utama yang selalu diapakai setiap harinya oleh programmer.</p>
-<p>Programmer gak mubngkin bisa lepas dari text editor.Karena kalu mau nuis kode pakai apalagi kalau bukan text editor</p>
-<p>Klalian pasti tahu ya kalau ada banyak ragam pilihan teks editor yang ada saat ini, SublimeText, Atom, Vscode dan lainya yang tenttunya menawarkan berbagai kelebihan dan kekurangannya masing-masing. Ada yang berbayar dan yang gratis.</p>
-<p>Tapi kalian tahu salah satu Text Editor keren ini, yaitu <strong>VIM</strong></p>
-<p>Ya vim namanya,ini adalah subuah text editor yang jalan di terminal kalian.</p>
-<p>agak aneh ya, text editor tapi jalanya di terminal</p>]]></description>
-</item>
-
-
-<item>
-<title>Pancasila</title>
-<guid>https://podsni.github.io//posts/pancasila.html</guid>
-<pubDate>Fri, 19 Mar 2021 14:30:29 +0700</pubDate><description><![CDATA[<h1 id="pancasila">Pancasila</h1>
-<ol type="1">
-<li>Ketuhanan yang Maha Esa</li>
-<li>Kemanusiaan yang adil dan beradab</li>
-<li>Persatuan Indonesia</li>
-<li>Kerakyatan yang dipimpin oleh himat kebijak dalam permusyawarantan / perwakilan</li>
-<li>Keadilan sosial bagi seluruh rakyat indonesia</li>
-</ol>]]></description>
-</item>
-
-
-
-</channel>
-</rss>
+</body>
+</html>
