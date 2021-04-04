@@ -9,7 +9,7 @@ polusi plastik.
 **Seaspiracy** adalah karya para produser di balik film dokumenter **Cowspiracy
 2014** yang memenangkan sejumlah pengharagaan, Ali Tabrizi.
 
-![](../images/Seaspiracy/2.png)
+![](../images/Seaspiracy/10.png)
 
 Ali mencerikan bahwa ia telah terpesona dengan lautan dan kehidupan didalamnya.
 
@@ -17,7 +17,6 @@ Berangkat dari kencitaannya tersebut,Ali membuat dokumneter yang menunjukan
 prilaku buruk manusia-manusia yang mencelakai spesies laut dan mengungkap
 korupsi global yang mengkhawatirkan.
 
-<iframe width="860" height="515" src="https://www.youtube.com/embed/1Q5CXN7soQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
  
 
 **Seaspiracy**
@@ -79,4 +78,22 @@ Terdamparnya hewan-hewan ini dengan perut penuh plastik sangatlah memprihatinkan
 bukan karena kecerdasan luar biasa mereka, tetapi karena mereka bahkan membantu
 menjaga kelangsungan hidup lautan.
 
-Your browser does not support the audio element.
+![](../images/Seaspiracy/11.PNG)
+
+Peruburan lumba-luba Taiji terus didukung,ditanggung, didanai oleh industri
+hiburan sirkus satwa laut seekor lumba-lumba hidup sangat mahal. Jadi,
+keuntungan besarnya didapat dari menangkap lumba-lumba dan paus muda,  lalu
+menjualnya ke sirkus satwa laut.
+
+![](../images/Seaspiracy/12.PNG)
+
+Industri penangkaran dengan tangki betonnya merampas segala sesuatu yang membuat
+hidup satwa ini layak.
+
+Semua yang mereka lakukan, tak boleh mereka lakukan,  semua yang tak ingin merak
+lakukan, harus mereka lakukan.
+
+Dari tahun 2000 hingga 2015 untuk satu lumba-lumba yang ditangkap,setidaknya 12
+lainnya dibunuh dan tidak tau kenapa mereka dibunuh.
+
+![](../images/Seaspiracy/13.PNG)
