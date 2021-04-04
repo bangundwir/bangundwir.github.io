@@ -10,10 +10,10 @@ tentang lautan kita dan penduduknya
 David Attenborough: A Life on Our Planet
 ----------------------------------------
 
-\<iframe width="560" height="315"
+<iframe width="560" height="315"
 src="https://www.youtube.com/embed/64R2MYUt394" title="YouTube video player"
 frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture" allowfullscreen\>\</iframe\>
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
  
 
@@ -36,10 +36,10 @@ di [Netflix.](https://www.netflix.com/title/80216393)
 Our Planet
 ----------
 
-\<iframe width="560" height="315"
+<iframe width="560" height="315"
 src="https://www.youtube.com/embed/aETNYyrqNYE" title="YouTube video player"
 frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture" allowfullscreen\>\</iframe\>
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
  
 
@@ -61,10 +61,10 @@ di [Netflix.](https://www.netflix.com/title/80049832)
 Blackfish
 ---------
 
-\<iframe width="560" height="315"
+<iframe width="560" height="315"
 src="https://www.youtube.com/embed/fLOeH-Oq_1Y" title="YouTube video player"
 frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture" allowfullscreen\>\</iframe\>
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
  
 
@@ -83,10 +83,10 @@ di [Netflix.](https://www.netflix.com/title/70267802)
 Chasing Coral
 -------------
 
-\<iframe width="560" height="315"
+<iframe width="560" height="315"
 src="https://www.youtube.com/embed/b6fHA9R2cKI" title="YouTube video player"
 frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture" allowfullscreen\>\</iframe\>
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
  
 
@@ -105,10 +105,10 @@ di [Netflix.](https://www.netflix.com/watch/80168188)
 A Plastic Ocean
 ---------------
 
-\<iframe width="560" height="315"
+<iframe width="560" height="315"
 src="https://www.youtube.com/embed/gd9ZFVgoQ68" title="YouTube video player"
 frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture" allowfullscreen\>\</iframe\>
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen\></iframe>
 
  
 
@@ -130,10 +130,10 @@ Play](https://play.google.com/store/movies/details?id=57jv8vBIUHI).
 The Cove
 --------
 
-\<iframe width="560" height="315"
+<iframe width="560" height="315"
 src="https://www.youtube.com/embed/4KRD8e20fBo" title="YouTube video player"
 frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture" allowfullscreen\>\</iframe\>
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
  
 
@@ -155,10 +155,10 @@ Mission Blue
 
  
 
-\<iframe width="560" height="315"
+<iframe width="560" height="315"
 src="https://www.youtube.com/embed/B1wp2MQCsfQ" title="YouTube video player"
 frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture" allowfullscreen\>\</iframe\>
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
  
 
