@@ -9,7 +9,7 @@ polusi plastik.
 **Seaspiracy **adalah karya para produser di balik film dokumenter **Cowspiracy
 2014 **yang memenangkan sejumlah pengharagaan, Ali Tabrizi.
 
-![](../images/Seaspiracy/2.webp = 250x250)
+![](../images/Seaspiracy/2.webp)
 
 Ali mencerikan bahwa ia telah terpesona dengan lautan dan kehidupan didalamnya.
 
