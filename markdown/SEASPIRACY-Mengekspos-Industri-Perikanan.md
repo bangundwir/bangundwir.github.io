@@ -6,10 +6,10 @@ polusi plastik.
 
  
 
-**Seaspiracy **adalah karya para produser di balik film dokumenter **Sowspiracy
+**Seaspiracy **adalah karya para produser di balik film dokumenter **Cowspiracy
 2014 **yang memenangkan sejumlah pengharagaan, Ali Tabrizi.
 
-![](../images/Seaspiracy/2.webp)
+![](../images/Seaspiracy/2.webp = 250x250)
 
 Ali mencerikan bahwa ia telah terpesona dengan lautan dan kehidupan didalamnya.
 
@@ -81,3 +81,8 @@ terhadap laut.
 Terdamparnya hewan-hewan ini dengan perut penuh plastik sangatlah memprihatinkan
 bukan karena kecerdasan luar biasa mereka, tetapi karena mereka bahkan membantu
 menjaga kelangsungan hidup lautan.
+
+<audio controls style="width:100%;">
+<source src="https://github.com/bangundwir/bangundwir.github.io/blob/main/HadesHard/Suara-paus.mp3 type="audio/mpeg"></source>
+Your browser does not support the audio element.
+</audio>
