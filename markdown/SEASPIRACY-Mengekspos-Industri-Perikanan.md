@@ -83,6 +83,6 @@ bukan karena kecerdasan luar biasa mereka, tetapi karena mereka bahkan membantu
 menjaga kelangsungan hidup lautan.
 
 <audio controls style="width:100%;">
-<source src="https://github.com/bangundwir/bangundwir.github.io/blob/main/HadesHard/Suara-paus.mp3 type="audio/mpeg"></source>
+<source src="https://banguncenter.my.id/HadesHard/Suara-paus.mp3" type="audio/mpeg"></source>
 Your browser does not support the audio element.
 </audio>
