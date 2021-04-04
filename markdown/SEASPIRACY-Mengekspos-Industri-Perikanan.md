@@ -48,7 +48,7 @@ selama ini akan lautan berubah total.
 
  
 
-![](../images/Seaspiracy/3.webp)
+![](../images/Seaspiracy/3.webp =800x450)
 
 Paus yang Hamil Meninggal dengan 50 Punds Plastik diperutnya
 
