@@ -11,6 +11,8 @@ polusi plastik.
 
 ![](../images/Seaspiracy/2.webp)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1Q5CXN7soQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Ali mencerikan bahwa ia telah terpesona dengan lautan dan kehidupan didalamnya.
 
 Berangkat dari kencitaannya tersebut,Ali membuat dokumneter yang menunjukan
