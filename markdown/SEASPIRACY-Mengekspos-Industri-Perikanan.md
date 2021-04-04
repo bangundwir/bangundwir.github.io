@@ -1,13 +1,13 @@
 ![](../images/Seaspiracy/1.webp)
 
-**Seaspiracy **merupakan film dokumenter yang menyelamai kehanjuran ekosistem
+**Seaspiracy** merupakan film dokumenter yang menyelamai kehanjuran ekosistem
 laut yang disebabkan oleh industri perikanan global serta perannya dalam memicu
 polusi plastik.
 
  
 
-**Seaspiracy **adalah karya para produser di balik film dokumenter **Cowspiracy
-2014 **yang memenangkan sejumlah pengharagaan, Ali Tabrizi.
+**Seaspiracy** adalah karya para produser di balik film dokumenter **Cowspiracy
+2014** yang memenangkan sejumlah pengharagaan, Ali Tabrizi.
 
 ![](../images/Seaspiracy/2.webp)
 
@@ -46,23 +46,19 @@ belum dijelajahi hingga kini, bagi saya, lautan adalah sumber inspirasi yang
 tidak bisa dirusak. Namun, tak lama setelah memulai proyek ini,visi indah saya
 selama ini akan lautan berubah total.
 
- 
-
-![](../images/Seaspiracy/3.webp)
+![](../images/Seaspiracy/3.PNG)
 
 Paus yang Hamil Meninggal dengan 50 Punds Plastik diperutnya
 
-![](../images/Seaspiracy/4.webp)
+![](../images/Seaspiracy/4.PNG)
 
 Bayi Lumba-lumba ditemukan Meniggal dengan Perut penuh sampah plastik.
 
- 
+![](../images/Seaspiracy/5.PNG)
 
-![](../images/Seaspiracy/5.webp)
+Tren yang mengkhawatirkan tentang paus terdampar yang dipenuhi dengan plastik
 
-Tren yang mengkhawatirkan tentang paus  terdampar yang dipenuhi dengan plastik
-
-![](../images/Seaspiracy/6.webp)
+![](../images/Seaspiracy/6.PNG)
 
 337 paus terdampar di terbesar yang pernah ada
 
@@ -70,19 +66,16 @@ Tren yang mengkhawatirkan tentang paus  terdampar yang dipenuhi dengan plastik
 
 Saat berita paus terdamapr mulai santer terdengan,
 
-![](../images/Seaspiracy/7.webp)
+![](../images/Seaspiracy/7.PNG)
 
 di sepanjang paintai tenggara Inggris tempat tinggal Ali, dia dipaksa menghadapi
 sisi kisah yang tak pernah dia tahu. Kisah tentang betapa besar dampak kita
 terhadap laut.
 
-![](../images/Seaspiracy/8.webp)
+![](../images/Seaspiracy/8.PNG)
 
 Terdamparnya hewan-hewan ini dengan perut penuh plastik sangatlah memprihatinkan
 bukan karena kecerdasan luar biasa mereka, tetapi karena mereka bahkan membantu
 menjaga kelangsungan hidup lautan.
 
-<audio controls style="width:100%;">
-<source src="https://banguncenter.my.id/HadesHard/Suara-paus.mp3" type="audio/mpeg"></source>
 Your browser does not support the audio element.
-</audio>
