@@ -1,4 +1,4 @@
-![](../images/Seaspiracy/1.webp)
+![](../images/Seaspiracy/1.png)
 
 **Seaspiracy** merupakan film dokumenter yang menyelamai kehanjuran ekosistem
 laut yang disebabkan oleh industri perikanan global serta perannya dalam memicu
@@ -9,9 +9,7 @@ polusi plastik.
 **Seaspiracy** adalah karya para produser di balik film dokumenter **Cowspiracy
 2014** yang memenangkan sejumlah pengharagaan, Ali Tabrizi.
 
-![](../images/Seaspiracy/2.webp)
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1Q5CXN7soQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![](../images/Seaspiracy/2.png)
 
 Ali mencerikan bahwa ia telah terpesona dengan lautan dan kehidupan didalamnya.
 
