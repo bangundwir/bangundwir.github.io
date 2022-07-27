@@ -16,7 +16,7 @@
 	<a href="https://discord.gg/uRksPhD"><img src="../images/discord.png" height=21 alt="discord"> Discord</a>
 	<a href="https://patreon.com/BangunCenter"><img src="../images/patreon.png" height=21 alt="Patreon"> Patreon</a>
 </div>-->
-	<title>BangunCenter - Ansible Easy VPN</title>
+	<title>BangunCenter - Cheat and Easy VPN in 5 Minutes</title>
 	<meta charset="utf-8">
 	<link rel="alternate" type="application/atom+xml" title="RSS Feed" href="../rss.xml">
 	<link rel="stylesheet" href="../style.css" >
@@ -29,17 +29,16 @@
 
 <header>
 	<h1><a href="../">BangunCenter</a></h1>
-	<h2>Ansible Easy VPN</h2>
-	<div id="byline">by Hades on 24 Jul '22</div>
+	<h2>Cheat and Easy VPN in 5 Minutes</h2>
+	<div id="byline">by BangunCenter on </div>
 </header>
 
 <article>
 <h1 id="ansible-easy-vpn">Ansible Easy VPN</h1>
-<pre><code></code></pre>
 <p><img src="../images/private.jpg" /></p>
 <p>Skrip interaktif sederhana/Playbook ansible yang menyiapkan server Wireguard VPN berbasis Ubuntu</p>
 <h3 id="penggunaan">Penggunaan</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/notthebee/ansible-easy-vpn/main/bootstrap.sh <span class="at">-O</span> bootstrap.sh <span class="kw">&amp;&amp;</span> <span class="fu">bash</span> bootstrap.sh</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/notthebee/ansible-easy-vpn/main/bootstrap.sh <span class="at">-O</span> bootstrap.sh <span class="kw">&amp;&amp;</span> <span class="fu">bash</span> bootstrap.sh</span></code></pre></div>
 <h3 id="fitur">Fitur</h3>
 <ul>
 <li>Peningkatan otomatis dan tanpa pengawasan</li>
@@ -59,11 +58,11 @@
 <h3 id="faq">FAQ</h3>
 <p><strong>T: Saya telah menjalankan playbook dengan sukses, tetapi sekarang saya ingin mengubah nama domain / nama pengguna / kata sandi. Bagaimana saya bisa melakukannya?</strong></p>
 <p>Edit file variabel, instal dependensi untuk pengguna baru dan jalankan kembali playbook:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$HOME</span>/ansible-easy-vpn</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ansible-galaxy</span> install <span class="at">-r</span> requirements.yml</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> inventory.yml</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">ansible-vault</span> edit secret.yml</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">ansible-playbook</span> run.yml</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$HOME</span>/ansible-easy-vpn</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ansible-galaxy</span> install <span class="at">-r</span> requirements.yml</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> inventory.yml</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">ansible-vault</span> edit secret.yml</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">ansible-playbook</span> run.yml</span></code></pre></div>
 <p><strong>T: Saya tidak dapat mengakses Wireguard WebUI setelah menjalankan playbook</strong></p>
 <p>Kemungkinan besar, pelakunya adalah nama domain yang salah. Periksa log Bunkerweb:</p>
 <pre><code>docker logs bunkerweb</code></pre>
@@ -71,9 +70,9 @@
 <pre><code>docker logs authelia</code></pre>
 <p><strong>T: Saya tidak dapat menyalin kunci SSH ke mesin Windows saya</strong></p>
 <p>Di Windows, Anda mungkin perlu membuat folder secara manual sebelum menjalankan perintah di akhir playbook:<code>C:\Users\&lt;username&gt;\.ssh</code></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> C:<span class="dt">\U</span>sers<span class="dt">\&lt;</span>username<span class="op">&gt;</span><span class="dt">\.</span>ssh</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-P</span> 22 root@<span class="op">&lt;</span>server-ip-address<span class="op">&gt;</span>:/tmp/id_ssh_ed25519 C:<span class="dt">\U</span>sers<span class="dt">\&lt;</span>username<span class="op">&gt;</span><span class="dt">\.</span>ssh</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-p</span> 22 <span class="op">&lt;</span>username<span class="op">&gt;</span>@<span class="op">&lt;</span>server-ip-address<span class="op">&gt;</span> -i C:<span class="dt">\U</span>sers<span class="dt">\&lt;</span>username<span class="op">&gt;</span><span class="dt">\.</span>ssh\id_ssh_ed25519</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> C:<span class="dt">\U</span>sers<span class="dt">\&lt;</span>username<span class="op">&gt;</span><span class="dt">\.</span>ssh</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-P</span> 22 root@<span class="op">&lt;</span>server-ip-address<span class="op">&gt;</span>:/tmp/id_ssh_ed25519 C:<span class="dt">\U</span>sers<span class="dt">\&lt;</span>username<span class="op">&gt;</span><span class="dt">\.</span>ssh</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-p</span> 22 <span class="op">&lt;</span>username<span class="op">&gt;</span>@<span class="op">&lt;</span>server-ip-address<span class="op">&gt;</span> -i C:<span class="dt">\U</span>sers<span class="dt">\&lt;</span>username<span class="op">&gt;</span><span class="dt">\.</span>ssh\id_ssh_ed25519</span></code></pre></div>
 </article>
 
 </div>

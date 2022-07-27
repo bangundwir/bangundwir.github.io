@@ -1,14 +1,5 @@
 # Ansible Easy VPN
 
-```
----
-author: Hades
-title: Ansible Easy VPN
-date: 2022-07-24
-summary: Skrip interaktif sederhana/Playbook ansible yang menyiapkan server Wireguard VPN berbasis Ubuntu
----
-```
-
 ![](../images/private.jpg)
 
 Skrip interaktif sederhana/Playbook ansible yang menyiapkan server Wireguard VPN berbasis Ubuntu
