@@ -9,7 +9,7 @@ summary: Skrip interaktif sederhana/Playbook ansible yang menyiapkan server Wire
 ---
 ```
 
-![](../../images/private.jpg)
+![](../images/private.jpg)
 
 Skrip interaktif sederhana/Playbook ansible yang menyiapkan server Wireguard VPN berbasis Ubuntu
 
