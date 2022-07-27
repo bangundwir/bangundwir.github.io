@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+
+<!--<div class="bumpanel">
+	<a target="_blank" href="https://youtube.com/c/BangunCenter"><img src="../images/youtube.png" height=21 alt="YouTube"> YouTube</a>
+	<a href="http://xpenguin.club"><img src="../images/xpenguin.png" height=21 alt="Xpenguin"> .XPenguin</a>
+	<a href="https://gitlab.com/BangunCenter"><img src="../images/gitlab.png" height=21 alt="Gitlab"> Gitlab</a>
+	<a href="http://pixelfridge.club"><img src="../images/fridge.png" height=21 alt="PixelFridge"> PixelFridge</a>
+	<a href="../email.html"><img src="../images/email.png" height=21 width=30 alt="Email me"> Email</a>
+	<a href="../archive.html"><img src="../images/blog.png" height=21 alt="Blog"> Posts</a>
+	<a href="../rss.xml"><img src="../images/rss.png" height=21 alt="RSS feed"> RSS feed</a>
+	<a href="https://discord.gg/uRksPhD"><img src="../images/discord.png" height=21 alt="discord"> Discord</a>
+	<a href="https://patreon.com/BangunCenter"><img src="../images/patreon.png" height=21 alt="Patreon"> Patreon</a>
+</div>-->
+	<title>BangunCenter - 2022 27 7 Cheat and Easy VPN in 5 Minutes</title>
+	<meta charset="utf-8">
+	<link rel="alternate" type="application/atom+xml" title="RSS Feed" href="../rss.xml">
+	<link rel="stylesheet" href="../style.css" >
+	<link rel="shortcut icon" href="../images/favicon.png">
+</head>
+
+<body>
+
+<div class="mainpanel">
+
+<header>
+	<h1><a href="../">BangunCenter</a></h1>
+	<h2>2022 27 7 Cheat and Easy VPN in 5 Minutes</h2>
+	<div id="byline">by BangunCenter on 27 Jul '22</div>
+</header>
+
+<article>
+<h1 id="ansible-easy-vpn">Ansible Easy VPN</h1>
+<p><img src="../images/private.jpg" /></p>
+<p>Skrip interaktif sederhana/Playbook ansible yang menyiapkan server Wireguard VPN berbasis Ubuntu</p>
+<h3 id="penggunaan">Penggunaan</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/notthebee/ansible-easy-vpn/main/bootstrap.sh <span class="at">-O</span> bootstrap.sh <span class="kw">&amp;&amp;</span> <span class="fu">bash</span> bootstrap.sh</span></code></pre></div>
+<h3 id="fitur">Fitur</h3>
+<ul>
+<li>Peningkatan otomatis dan tanpa pengawasan</li>
+<li>Pengerasan SSH</li>
+<li>Pembuatan pasangan kunci publik SSH (opsional, Anda juga dapat menggunakan kunci Anda sendiri)</li>
+<li>Pemberitahuan e-mail (menggunakan server SMTP eksternal misalnya GMail)</li>
+<li>UFW dan Fail2Ban</li>
+<li>Wireguard WebUI (melalui wg-easy)</li>
+<li>Otentikasi dua faktor untuk WebUI (Authelia)</li>
+<li>Server web yang dikeraskan (Bunkerweb)</li>
+</ul>
+<h3 id="persyaratan">Persyaratan</h3>
+<ul>
+<li>VPS berbasis KVM (atau instans AWS EC2) dengan alamat IPv4 khusus</li>
+<li>Ubuntu Server 20.04 atau 22.04</li>
+</ul>
+<h3 id="faq">FAQ</h3>
+<p><strong>T: Saya telah menjalankan playbook dengan sukses, tetapi sekarang saya ingin mengubah nama domain / nama pengguna / kata sandi. Bagaimana saya bisa melakukannya?</strong></p>
+<p>Edit file variabel, instal dependensi untuk pengguna baru dan jalankan kembali playbook:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$HOME</span>/ansible-easy-vpn</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ansible-galaxy</span> install <span class="at">-r</span> requirements.yml</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> inventory.yml</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">ansible-vault</span> edit secret.yml</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">ansible-playbook</span> run.yml</span></code></pre></div>
+<p><strong>T: Saya tidak dapat mengakses Wireguard WebUI setelah menjalankan playbook</strong></p>
+<p>Kemungkinan besar, pelakunya adalah nama domain yang salah. Periksa log Bunkerweb:</p>
+<pre><code>docker logs bunkerweb</code></pre>
+<p>Alasan lain mungkin kredensial SMTP salah. Lihat log Authelia:</p>
+<pre><code>docker logs authelia</code></pre>
+<p><strong>T: Saya tidak dapat menyalin kunci SSH ke mesin Windows saya</strong></p>
+<p>Di Windows, Anda mungkin perlu membuat folder secara manual sebelum menjalankan perintah di akhir playbook:<code>C:\Users\&lt;username&gt;\.ssh</code></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> C:<span class="dt">\U</span>sers<span class="dt">\&lt;</span>username<span class="op">&gt;</span><span class="dt">\.</span>ssh</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-P</span> 22 root@<span class="op">&lt;</span>server-ip-address<span class="op">&gt;</span>:/tmp/id_ssh_ed25519 C:<span class="dt">\U</span>sers<span class="dt">\&lt;</span>username<span class="op">&gt;</span><span class="dt">\.</span>ssh</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-p</span> 22 <span class="op">&lt;</span>username<span class="op">&gt;</span>@<span class="op">&lt;</span>server-ip-address<span class="op">&gt;</span> -i C:<span class="dt">\U</span>sers<span class="dt">\&lt;</span>username<span class="op">&gt;</span><span class="dt">\.</span>ssh\id_ssh_ed25519</span></code></pre></div>
+</article>
+
+</div>
+
+<center><small>Saya Akan Menulis yang ingin saya tulis</small></center>
+
+</body>
+</html>

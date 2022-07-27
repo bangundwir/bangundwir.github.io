@@ -30,7 +30,7 @@
 <header>
 	<h1><a href="../">BangunCenter</a></h1>
 	<h2>2021 09 22 Membuat server OpenVPN sendiri</h2>
-	<div id="byline">by BangunCenter on 22 Sep '21</div>
+	<div id="byline">by BangunCenter on 27 Jul '22</div>
 </header>
 
 <article>
@@ -58,78 +58,78 @@
 <p>Jika Anda menggunakan Linux, Anda mungkin sudah tahu cara membuka terminal, jika Anda menggunakan Mac, Anda dapat menemukan aplikasi Terminal di folder Aplikasi Anda, dan pada Windows 10 Anda harus membuka PowerShell dengan hak istimewa administrator dan menginstal SSH menggunakan perintah ini:</p>
 <pre><code>PS C:\&gt; Add-WindowsCapability -Online -Name OpenSSH.Client*</code></pre>
 <p>Ini adalah perintah yang akan menghasilkan kunci ssh kami. Algoritma RSA dengan ukuran kunci 4096 adalah apa yang saya sarankan secara pribadi, karena cukup aman dan didukung secara luas.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">ssh-keygen</span> -t rsa -b 4096</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> rsa <span class="at">-b</span> 4096</span></code></pre></div>
 <p>Tekan Enter saat diminta lokasi utama untuk menyimpannya ke yang default lalu masukkan kata sandi pilihan Anda.</p>
 <h2 id="masuk-ke-server">Masuk ke server</h2>
 <p>Sekarang server kami telah dimulai dan kami siap untuk masuk. Salin alamat IP dari panel kontrol server, kembali ke terminal dan ketik</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">ssh</span> root@ip-address</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> root@ip-address</span></code></pre></div>
 <p>Ketik ya, masukkan kata sandi root yang Anda tentukan pada langkah pertama dan hanya itu, kami masuk.</p>
 <h2 id="memperbarui-os">Memperbarui OS</h2>
 <p>Pertama dan terutama, mari kita perbarui sistem operasi dan perangkat lunak kita:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="ex">apt-get</span> update <span class="kw">&amp;&amp;</span> <span class="ex">apt-get</span> upgrade</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> update <span class="kw">&amp;&amp;</span> <span class="ex">apt-get</span> upgrade</span></code></pre></div>
 <p>Saya juga akan menginstal editor teks favorit saya, jangan ragu untuk menggunakan apa pun yang Anda inginkan, misalnya nano.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">apt</span> install neovim</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> install neovim</span></code></pre></div>
 <h2 id="membuat-pengguna">Membuat pengguna</h2>
 <p>Sebanyak itu nyaman untuk tidak harus memasukkan kata sandi setiap saat, kita perlu membuat akun pengguna yang tidak root. Mengekspos login root pada server SSH mungkin bukan ide yang baik bahkan jika Anda memiliki otentikasi multi faktor. Panggil saya paranoid, tapi saya pikir harus memasukkan kata sandi root kadang-kadang adalah harga yang saya bersedia membayar untuk beberapa rasa aman. Jenis</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="ex">useradd</span> -G sudo -m wolfgang -s /bin/bash</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">useradd</span> <span class="at">-G</span> sudo <span class="at">-m</span> wolfgang <span class="at">-s</span> /bin/bash</span></code></pre></div>
 <p>Itu akan membuat pengguna, mengatur bash sebagai shell default untuknya dan memungkinkan penggunaan sudo.</p>
 <p>Setelah itu kita harus membuat kata sandi untuk pengguna kita, menggunakan</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="fu">passwd</span> hades</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">passwd</span> hades</span></code></pre></div>
 <p>Masukkan kata sandi Anda dua kali dan kami baik untuk pergi.</p>
 <h2 id="menyalin-kunci-ssh-dari-host-ke-server">Menyalin kunci SSH dari host ke server</h2>
 <p>Sekarang setelah kami membuat pengguna kami, ini saat yang tepat untuk menyalin kunci SSH publik ke server. Buka jendela terminal kedua untuk terminal lokal Anda dan masukkan:</p>
 <h3 id="linux-atau-mac">Linux atau Mac</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="ex">ssh-copy-id</span> hades@ip_address</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ssh-copy-id</span> hades@ip_address</span></code></pre></div>
 <h3 id="windows">Windows</h3>
 <pre><code>type $env:USERPROFILE\.ssh\id_rsa.pub | ssh wolfgang@ip_address &quot;mkdir -p ~/.ssh &amp;&amp; chmod 700 ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys &amp;&amp; chmod 600 ~/.ssh/authorized_keys&quot;</code></pre>
 <p>Anda akan diminta untuk memasukkan kata sandi Anda dan setelah Anda melakukannya, kembali ke jendela terminal dengan server Anda. Jangan menutup jendela yang lain.</p>
 <h2 id="membatasi-ssh-ke-autentikasi-kunci">Membatasi SSH ke autentikasi kunci</h2>
 <p>Sekarang setelah kami menyalin kunci SSH ke server, kami harus membatasi otentikasi ke kunci publik saja. Mari kita edit file konfigurasi sshd</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="ex">nvim</span> /etc/ssh/sshd_config</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvim</span> /etc/ssh/sshd_config</span></code></pre></div>
 <p>Pertama-tama, mari kita ubah port default. Ini tidak akan berbuat banyak untuk keamanan, tetapi ini akan membantu dengan pemindai SSH yang menjengkelkan yang mencoba masuk dengan kredensial default. Tidak banyak, tetapi log keamanan pasti akan menjadi lebih mudah dibaca. Anda dapat menggunakan port apa pun yang tidak diambil oleh layanan lain, tetapi saya lebih suka menggunakan 69. Bagus</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" title="1"><span class="co"># Port 22</span></a>
-<a class="sourceLine" id="cb11-2" title="2"><span class="ex">Port</span> 69</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Port 22</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Port</span> 69</span></code></pre></div>
 <p>Selanjutnya, kita perlu menonaktifkan autentikasi kata sandi sehingga Anda hanya dapat masuk menggunakan kunci publik.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" title="1"><span class="ex">PasswordAuthentication</span> no</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">PasswordAuthentication</span> no</span></code></pre></div>
 <p>Last but not least, mari kita juga menonaktifkan login root</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" title="1"><span class="ex">PermitRootLogin</span> no</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">PermitRootLogin</span> no</span></code></pre></div>
 <p>Sekarang simpan file dan mulai ulang layanan sshd menggunakan</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" title="1"><span class="ex">systemctl</span> restart sshd</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">systemctl</span> restart sshd</span></code></pre></div>
 <p>Sekarang tanpa menutup jendela ini mari kita kembali ke mesin lokal kami dan mencoba masuk dengan kunci kami:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" title="1"><span class="fu">ssh</span> -i ~/.ssh/id_rsa wolfgang@ip_address -p 69</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-i</span> ~/.ssh/id_rsa wolfgang@ip_address <span class="at">-p</span> 69</span></code></pre></div>
 <p>Jika Anda melihat prompt untuk memasukkan kata sandi kunci Anda, itu berarti kami baik untuk pergi. Ini juga merupakan ide yang baik untuk memverifikasi bahwa kita tidak dapat masuk dengan kata sandi kita lagi:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" title="1"><span class="fu">ssh</span> wolfgang@ip_address -p 69</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> wolfgang@ip_address <span class="at">-p</span> 69</span></code></pre></div>
 <p>Ini harus memberi kita “Izin ditolak”.</p>
 <h2 id="membuat-alias-server">Membuat alias server</h2>
 <p>Tetapi Anda mungkin telah memperhatikan bahwa perintah ini agak panjang dan menjengkelkan untuk diketik, jadi mari kita perbaiki itu. Buat file di folder “.ssh” di direktori rumah Anda yang disebut “konfigurasi” dan edit menggunakan editor teks favorit Anda:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb17-1" title="1"><span class="ex">nvim</span> ~/.ssh/config</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvim</span> ~/.ssh/config</span></code></pre></div>
 <p>Di sini kita akan membuat alias untuk VPS kita</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb18-1" title="1"><span class="ex">Host</span> wolfgangsvpn <span class="co"># choose a name for your server   </span></a>
-<a class="sourceLine" id="cb18-2" title="2">    <span class="ex">User</span> wolgang <span class="co"># the username of the user that we created</span></a>
-<a class="sourceLine" id="cb18-3" title="3">    <span class="ex">Port</span> 69</a>
-<a class="sourceLine" id="cb18-4" title="4">    <span class="ex">IdentityFile</span> ~/.ssh/id_rsa <span class="co"># that&#39;s the location of our key file</span></a>
-<a class="sourceLine" id="cb18-5" title="5">    <span class="ex">HostName</span> ip_address <span class="co"># that&#39;s the IP address of our server</span></a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Host</span> wolfgangsvpn <span class="co"># choose a name for your server   </span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">User</span> wolgang <span class="co"># the username of the user that we created</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Port</span> 69</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">IdentityFile</span> ~/.ssh/id_rsa <span class="co"># that&#39;s the location of our key file</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">HostName</span> ip_address <span class="co"># that&#39;s the IP address of our server</span></span></code></pre></div>
 <p>Simpan dan tutup, dan sekarang kita bisa masuk ke server kita hanya dengan mengetik <code>ssh wolfgangsvpn</code></p>
 <p>Jika Anda juga tidak ingin melihat dinding teks ini setiap kali Anda login, ketik <code>touch .hushlogin</code></p>
 <h2 id="menyiapkan-openvpn">Menyiapkan OpenVPN</h2>
 <p>Saya tahu bahwa Wireguard telah menjadi protokol VPN baru yang panas yang difokuskan semua orang akhir-akhir ini, tetapi dalam video ini saya akan menggunakan OpenVPN sebagai gantinya. Mengapa? Karena memiliki dukungan yang lebih luas ketika datang ke aplikasi klien dan beberapa aplikasi yang akan saya bicarakan di bagian ke-2 dari tutorial ini menggunakan OpenVPN. Jika Anda tertarik untuk menyiapkan server Wireguard, ada banyak tutorial di Internet tentang hal itu.</p>
 <p>Biasanya menyiapkan server OpenVPN membutuhkan waktu karena Anda perlu menginstal paket, menghasilkan kunci, mengatur IPTable, menulis file konfigurasi untuk server dan klien. Untungnya, kami tidak akan melakukan semua ini dalam tutorial dan sebagai gantinya kami akan menggunakan skrip road warrior OpenVPN dari pengguna github bernama Nyr - https://github.com/Nyr/openvpn-install. Skrip ini akan melakukan semua kerja keras untuk kita dan yang harus kita lakukan adalah menjawab beberapa pertanyaan sederhana dan mengunduh file konfigurasi di akhir. Tak perlu dikatakan Anda tidak boleh hanya berkeliling mengeksekusi skrip acak yang Anda unduh dari internet, jadi jika Anda tahu beberapa bash, baca skripnya terlebih dahulu dan pastikan tidak ada yang mencurigakan di sana. Jika Anda tidak tahu bash apapun, mungkin mengirimkannya ke teman yang melakukannya. Setelah selesai dengan pembacaan skrip, klik mentah dan salin tautan dari browser Anda.</p>
 <p>Masuk ke server Anda dan instal jika Anda belum melakukannya. Kadang-kadang datang dengan gambar OS Anda sudah, tapi kadang-kadang tidak.<code>wget</code></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb19-1" title="1"><span class="fu">sudo</span> apt install wget</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install wget</span></code></pre></div>
 <p>Selanjutnya, ketik , tekan Spasi dan tempelkan tautan yang Anda salin sebelumnya. Tekan Enter<code>wget</code></p>
 <p>Sekarang mari kita luncurkan script</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb20-1" title="1"><span class="fu">sudo</span> bash openvpn-install.sh</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> bash openvpn-install.sh</span></code></pre></div>
 <p>Skrip akan mengajukan beberapa pertanyaan, dan dalam banyak kasus Anda ingin memilih jawaban default. Untuk port, Anda dapat memilih port default, 1194, tetapi saya lebih suka memilih 443, karena 1194 dikenal sebagai “port OpenVPN” dan dalam beberapa kasus dapat diblokir di jaringan Anda. 443 adalah port yang sama yang digunakan untuk HTTPS, tetapi sedangkan HTTPS menggunakan TCP, OpenVPN (dalam konfigurasi ini) menggunakan UDP, sehingga mereka tidak akan saling bertentangan.</p>
 <p>Anda juga akan ditanya DNS mana yang ingin Anda gunakan. Jangan ragu untuk memilih apa pun yang Anda suka, tetapi saya biasanya memilih 1.1.1.1</p>
 <p>Sedangkan untuk nama klien, pilih apa pun yang Anda suka.</p>
 <p>Sekarang setelah konfigurasi selesai, tekan tombol apa pun dan proses instalasi akan dimulai. Ini sepenuhnya otomatis dan pada akhirnya Anda akan mendapatkan file konfigurasi yang akan kami unduh ke mesin lokal kami nanti. Masalahnya adalah bahwa skrip menempatkan file di direktori root secara default, dan untuk mengunduhnya nanti, kita perlu memindahkannya ke direktori rumah pengguna kita dan memberi diri kita priviliges yang benar:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb21-1" title="1"><span class="fu">sudo</span> mv /root/thinkpad.ovpn ~</a>
-<a class="sourceLine" id="cb21-2" title="2"><span class="fu">sudo</span> chown wolfgang thinkpad.ovpn</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mv /root/thinkpad.ovpn ~</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown wolfgang thinkpad.ovpn</span></code></pre></div>
 <p>Dengan ini keluar dari jalan hanya ada satu hal yang tersisa untuk dilakukan di sisi server, dan itu adalah untuk menonaktifkan log. Mari kita edit file konfigurasi:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb22-1" title="1"><span class="fu">sudo</span> nvim /etc/openvpn/server/server.conf</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nvim /etc/openvpn/server/server.conf</span></code></pre></div>
 <p>Dan berubah menjadi <code>verb 3``verb 0</code></p>
 <p>Sekarang mulai ulang layanan OpenVPN:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb23-1" title="1"><span class="ex">systemctl</span> restart openvpn-server@server.service</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">systemctl</span> restart openvpn-server@server.service</span></code></pre></div>
 <p>Dan di sana kita pergi! VPN yang <strong>benar-benar</strong> tidak menyimpan log. Menakjubkan.</p>
 <p>Saya juga baru saja memperhatikan bahwa nama host server adalah “localhost”, yang tidak keren karena berbagai alasan. Jadi mari kita ubah menjadi sesuatu yang lain, saya akan menyebutnya “wolfgangsvpn”</p>
 <h2 id="mengunduh-file-konfigurasi">Mengunduh file konfigurasi</h2>
@@ -142,43 +142,43 @@
 <h2 id="opsional-menyiapkan-autentikasi-multi-faktor">Opsional: Menyiapkan autentikasi multi-faktor</h2>
 <p>Sekarang, otentikasi kunci publik mungkin cukup aman untuk sebagian besar, tetapi jika Anda ingin menjadi lebih mewah, Anda juga dapat menambahkan MFA atau otentikasi multi-faktor. Cara kerjanya adalah Anda menginstal aplikasi di ponsel Anda (ada banyak aplikasi open source di Android seperti AndOTP) dan setiap kali Anda masuk, Anda mendapatkan kata sandi satu kali di aplikasi yang perlu Anda masukkan untuk masuk. Ini memberikan lapisan keamanan tambahan untuk server Anda yang dapat berguna bagi sebagian dari kita yang sangat paranoid.</p>
 <p>Hal pertama yang harus Anda lakukan adalah menginstal Ya, protokol dibuat oleh Google, tetapi itu benar-benar open-source dan Anda tidak perlu menggunakan aplikasi Google Authenticator di ponsel Anda, ada banyak opsi open source seperti yang telah saya sebutkan.<code>google-authenticator-libpam</code></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb24-1" title="1"><span class="fu">sudo</span> apt install libpam-google-authenticator</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install libpam-google-authenticator</span></code></pre></div>
 <p>After that, launch the initialization script by typing . There, basically answer yes to all questions except for the one about multiple users and the one about 30 second tokens.<code>google-authenticator</code></p>
 <p>Once you’ve done that, you might have noticed a big QR code in your command line as well as the recovery codes. Make sure to write those codes down somewhere save, they’ll be useful in case you lose the access to the app on your phone. After that what you need to do is launch the authenticator app on your phone, I’ll use OTP Auth, add a new account and chooe “Scan a QR code”. After you scan the code, the account will be added to the app. And we’re done with the phone part for now.</p>
 <p>Let’s go back to the server terminal and edit the authentication settings file for sshd:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb25-1" title="1"><span class="fu">sudo</span> nvim /etc/pam.d/sshd</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nvim /etc/pam.d/sshd</span></code></pre></div>
 <p>Here we’ll comment out the line that says . Normally the two factor authentication will ask you for your user password and the one time password, but since we’re already using a public key with the password, having to enter your password twice is slightly annoying. That way you’ll only have to enter the public key password and the one time password.<code>@include common-auth</code></p>
 <p>Next we need to add this line to the end of the file:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb26-1" title="1"><span class="ex">auth</span> required pam_google_authenticator.so</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">auth</span> required pam_google_authenticator.so</span></code></pre></div>
 <p>Let’s save the file and quit. Now we need to edit the SSHD configuration file to make SSH aware of the new authentication method:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb27-1" title="1"><span class="fu">sudo</span> nvim /etc/ssh/sshd_config</a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nvim /etc/ssh/sshd_config</span></code></pre></div>
 <p>Here we need to change the following lines:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb28-1" title="1"><span class="ex">ChallengeResponseAuthentication</span> yes</a>
-<a class="sourceLine" id="cb28-2" title="2"><span class="ex">UsePAM</span> yes</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ChallengeResponseAuthentication</span> yes</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">UsePAM</span> yes</span></code></pre></div>
 <p>And add a new line after UsePAM that says:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb29-1" title="1"><span class="ex">AuthenticationMethods</span> publickey,password publickey,keyboard-interactive</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">AuthenticationMethods</span> publickey,password publickey,keyboard-interactive</span></code></pre></div>
 <p>That’s it, let’s save the file and exit. And now let’s restart the SSH service for the changes to take effect:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb30-1" title="1"><span class="fu">sudo</span> systemctl restart sshd</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl restart sshd</span></code></pre></div>
 <p>As I mentioned in the beginning, it’s always a good idea to try and log in in a separate terminal window without closing the server session. Otherwise if you messed up you’ll be locked out of the SSH and obviously you don’t want that.</p>
 <p>If you try to log in now you’ll see that apart from the usual public key password you’re also going to be asked for the one time password from your app. Once again, if you’re using Gnome, you won’t be prompted for the public key until you log out and log back in again, only the one time password from your phone app. Let’s enter the password and voila! Now our server is secured by two-factor authentication.</p>
 <h2 id="optional-unattended-upgrades">Optional: Unattended upgrades</h2>
 <p>One last thing that I want to show you today is unattended software upgrades. What this means is we’re going to have a script that runs and regularly, thus liberating us from the burden of having to log in to the server and do this manually. The server will also be rebooted for kernel updates, but since the reboot takes less than a minute, and since kernel updates are not very frequent, your VPN won’t actually have much downtime because of the upgrades. You can also disable the automatic reboots if you prefer to do it yourself.<code>apt update``apt upgrade</code></p>
 <p>So the first thing we need to do is to install the unattended-upgrades package:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb31-1" title="1"><span class="fu">sudo</span> apt install unattended-upgrades apt-listchanges bsd-mailx</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install unattended-upgrades apt-listchanges bsd-mailx</span></code></pre></div>
 <p>Next, enable the stable security updates:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb32-1" title="1"><span class="fu">sudo</span> dpkg-reconfigure -plow unattended-upgrades</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg-reconfigure <span class="at">-plow</span> unattended-upgrades</span></code></pre></div>
 <p>Setelah itu selesai, mari kita edit file konfigurasi</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb33-1" title="1"><span class="fu">sudo</span> nvim /etc/apt/apt.conf.d/50unattended-upgrades</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nvim /etc/apt/apt.conf.d/50unattended-upgrades</span></code></pre></div>
 <p>Di sini kita perlu mengatur alamat email kita yang akan digunakan untuk memperbarui pemberitahuan:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb34-1" title="1"><span class="ex">Unattended-Upgrade</span>::Mail <span class="st">&quot;mail@example.com&quot;</span><span class="kw">;</span></a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Unattended-Upgrade::Mail</span> <span class="st">&quot;mail@example.com&quot;</span><span class="kw">;</span></span></code></pre></div>
 <p>Dan kemudian juga mengaktifkan reboot otomatis, mengatur tugas pembersihan untuk menghapus kernel yang tidak digunakan dan mengatur waktu reboot otomatis pada pukul 5 pagi.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb35-1" title="1"><span class="ex">Unattended-Upgrade</span>::Automatic-Reboot <span class="st">&quot;true&quot;</span><span class="kw">;</span>  <span class="co"># this is kind of obvious</span></a>
-<a class="sourceLine" id="cb35-2" title="2"><span class="ex">Unattended-Upgrade</span>::Remove-Unused-Kernel-Packages <span class="st">&quot;true&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb35-3" title="3"><span class="ex">Unattended-Upgrade</span>::Remove-Unused-Dependencies <span class="st">&quot;true&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb35-4" title="4"><span class="ex">Unattended-Upgrade</span>::Automatic-Reboot <span class="st">&quot;true&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb35-5" title="5"><span class="ex">Unattended-Upgrade</span>::Automatic-Reboot-Time <span class="st">&quot;05:00&quot;</span><span class="kw">;</span> <span class="co"># here we&#39;ll specify when we want our system to reboot</span></a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Unattended-Upgrade::Automatic-Reboot</span> <span class="st">&quot;true&quot;</span><span class="kw">;</span>  <span class="co"># this is kind of obvious</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Unattended-Upgrade::Remove-Unused-Kernel-Packages</span> <span class="st">&quot;true&quot;</span><span class="kw">;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Unattended-Upgrade::Remove-Unused-Dependencies</span> <span class="st">&quot;true&quot;</span><span class="kw">;</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Unattended-Upgrade::Automatic-Reboot</span> <span class="st">&quot;true&quot;</span><span class="kw">;</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Unattended-Upgrade::Automatic-Reboot-Time</span> <span class="st">&quot;05:00&quot;</span><span class="kw">;</span> <span class="co"># here we&#39;ll specify when we want our system to reboot</span></span></code></pre></div>
 <p>Itu saja! Mari kita lihat apakah itu berhasil</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb36-1" title="1"><span class="fu">sudo</span> unattended-upgrades --dry-run</a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> unattended-upgrades <span class="at">--dry-run</span></span></code></pre></div>
 <p>Jadi sekarang sistem Anda dan semua paket akan diperbarui secara otomatis dan Anda akan mendapatkan email setiap kali upgrade telah dilakukan.</p>
 </article>
 
